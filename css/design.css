@@ -1,0 +1,14 @@
+html, body {
+    font-size: 24px;
+    background-color: rgb(165, 97, 83);
+}
+
+hr {
+    border-color: black;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+figure {
+    text-align: center;
+}
