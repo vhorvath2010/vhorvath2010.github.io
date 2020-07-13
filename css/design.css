@@ -1,6 +1,11 @@
 html, body {
     font-size: 24px;
     background-color: rgb(165, 97, 83);
+    color: rgb(41, 24, 24);
+}
+
+h1 {
+    text-align: center;
 }
 
 hr {
@@ -11,4 +16,18 @@ hr {
 
 figure {
     text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1.5em;
+}
+
+nav {
+    text-align: center;
+    background-color: rgb(138, 81, 71);
+}
+
+.bpost {
+    margin-bottom: 1em;
 }
