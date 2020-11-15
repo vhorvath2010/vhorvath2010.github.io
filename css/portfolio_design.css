@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Hollywood';
+    src: url('hollywood.ttf') format('truetype'), url('hollywood.woff') format('woff'), url('hollywood.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Glitch';
+    src: url('glitch.ttf') format('truetype'), url('glitch.woff') format('woff'), url('glitch.woff2') format('woff2');
+}
+
+html,
+body {
+    font-family: 'Glitch';
+}
+
+#title {
+    text-align: center;
+    font-size: 32px;
+}
