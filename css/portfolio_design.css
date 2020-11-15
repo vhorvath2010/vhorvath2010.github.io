@@ -1,19 +1,39 @@
 @font-face {
     font-family: 'Hollywood';
-    src: url('hollywood.ttf') format('truetype'), url('hollywood.woff') format('woff'), url('hollywood.woff2') format('woff2');
+    src: url('fonts/hollywood.ttf') format('truetype'), url('fonts/hollywood.woff') format('woff'), url('fonts/hollywood.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Glitch';
-    src: url('glitch.ttf') format('truetype'), url('glitch.woff') format('woff'), url('glitch.woff2') format('woff2');
+    src: url('fonts/glitch.ttf') format('truetype'), url('fonts/glitch.woff') format('woff'), url('fonts/glitch.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Optimus';
+    src: url('fonts/Optimus.ttf') format('truetype'), url('fonts/Optimus.woff') format('woff'), url('fonts/Optimus.woff2') format('woff2');
 }
 
 html,
 body {
-    font-family: 'Glitch';
+    font-size: 24px;
+    font-family: 'Optimus', 'Courier New', Courier, monospace;
 }
 
 #title {
     text-align: center;
     font-size: 32px;
+    font-family: 'Glitch', 'Courier New', Courier, monospace;
+}
+
+.nav-bar {
+    text-align: center;
+    border-top: 1px;
+    border-bottom: 1px;
+    border-style: solid none;
+    padding-right: 35px;
+}
+
+.nav-bar li {
+    display: inline-flex;
+    padding: 10px 20px 10px 20px;
 }
