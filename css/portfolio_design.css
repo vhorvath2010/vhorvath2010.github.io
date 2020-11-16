@@ -26,9 +26,10 @@ body {
 }
 
 #top {
-    background-image: url('assets/city.jpg');
+    background-image: url('assets/background.png');
     background-repeat: no-repeat;
     background-size: cover;
+    padding-bottom: 500px;
 }
 
 #top h1 {
@@ -39,7 +40,6 @@ body {
 .nav-bar {
     text-align: center;
     padding-right: 35px;
-    padding-bottom: 650px;
 }
 
 .nav-bar li {
@@ -61,18 +61,91 @@ body {
     transition: 0.3s;
 }
 
+#load {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 1;
+}
+
 ::-webkit-scrollbar {
     width: 15px;
 }
 
- ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: rgb(214, 214, 214);
 }
 
- ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: rgb(177, 177, 177);
 }
 
- ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: rgb(151, 151, 151);
+}
+
+::selection {
+    background: rgb(255, 249, 198);
+}
+
+::-moz-selection {
+    background: rgb(255, 249, 198);
+}
+
+.box {
+    margin: auto;
+    width: 60%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circleSpinShadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    width: 102px;
+    height: 102px;
+    border-radius: 50%;
+}
+
+.circleSpinOuter {
+    width: 100px;
+    height: 100px;
+    padding: 2px;
+    background: linear-gradient(to bottom, rgb(170, 210, 210) 0%, rgba(170, 210, 186, 0) 22%, rgba(170, 210, 186, 0) 96%);
+    border-radius: 50%;
+    animation: spin 2s linear 0s infinite;
+    box-shadow: 0 0 20px rgba(100, 193, 247, 0.8);
+}
+
+.circleSpinInner {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    border-radius: 50%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0 0 20px rgba(100, 247, 235, 0.2);
+    }
+    30% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(360deg);
+        box-shadow: 0 0 20px rgba(100, 242, 247, 0.8);
+    }
+    80% {
+        transform: rotate(450deg);
+    }
+    100% {
+        transform: rotate(720deg);
+        box-shadow: 0 0 20px rgba(100, 247, 247, 0.2);
+    }
 }
