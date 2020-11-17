@@ -13,10 +13,25 @@
     src: url('fonts/Optimus.ttf') format('truetype'), url('fonts/Optimus.woff') format('woff'), url('fonts/Optimus.woff2') format('woff2');
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-size: 24px;
     font-family: 'Optimus', 'Courier New', Courier, monospace;
     margin: 0px;
+}
+
+#load {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 1;
 }
 
 #title {
@@ -25,14 +40,11 @@ body {
     font-family: 'Optimus', 'Courier New', Courier, monospace;
 }
 
-#top {
-    background-image: url('assets/background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 500px;
+#title-sec {
+    padding-bottom: 400px;
 }
 
-#top h1 {
+#title-sec h1 {
     margin: 0px 0px 0px 0px;
     padding: 250px 0px 75px 0px;
 }
@@ -61,15 +73,25 @@ body {
     transition: 0.3s;
 }
 
-#load {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    position: fixed;
-    opacity: 1;
+.sec-heading {
+    margin-left: 50px;
+}
+
+#about {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding-bottom: 100px;
+    padding-top: 25px;
+}
+
+#about p {
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+#about hr {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
 }
 
 ::-webkit-scrollbar {
