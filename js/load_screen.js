@@ -13,3 +13,13 @@ window.onload = function() {
         }, 35);
     }, 1500);
 }
+
+let animation = anime({
+    targets: ".dot",
+    'margin-left': '52.5vw',
+    duration: 250,
+    direction: "alternate",
+    delay: anime.stagger(150),
+    loop: true,
+    easing: 'easeInOutSine'
+});
