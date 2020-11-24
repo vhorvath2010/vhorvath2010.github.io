@@ -88,25 +88,24 @@ body {
 }
 
 .sec-heading {
-    margin-left: 50px;
+    margin-left: 5vw;
+    padding-top: 5vh;
 }
 
 .body-sec {
-    padding-bottom: 100px;
-    padding-top: 25px;
+    height: 100vh;
 }
 
 #about,
 #contact {
     background-color: rgb(41, 41, 41);
     color: white;
-    height: 100vh;
 }
 
 #about p {
     margin-right: 50px;
     margin-left: 50px;
-    margin-bottom: 475px;
+    margin-bottom: 25vh;
 }
 
 #about hr {
@@ -119,10 +118,6 @@ body {
     border-color: rgb(41, 41, 41);
 }
 
-#projects {
-    height: 100vh;
-}
-
 #projects ul {
     text-align: center;
 }
@@ -131,8 +126,14 @@ body {
     display: inline-block;
     background-color: rgb(41, 41, 41);
     color: white;
-    margin: 125px 100px 0px 100px;
-    padding: 125px 125px 375px 125px;
+    width: 25vh;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    padding-top: 5vh;
+    padding-bottom: 45vh;
+    margin-top: 5vh;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
 }
 
 #contact h2 {
