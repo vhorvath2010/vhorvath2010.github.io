@@ -1,0 +1,14 @@
+body {
+    background-image: url('assets/city.jpeg');
+    background-size: auto;
+    text-align: center;
+    color: white;
+}
+
+#name-display {
+    color: white;
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+    font-size: 80px;
+}
