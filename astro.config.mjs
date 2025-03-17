@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import svgr from "vite-plugin-svgr";
 import tailwind from "@astrojs/tailwind";
 
-export const siteUrl = "http://localhost:4321";
+export const siteUrl = "https://vhorvath2010.github.io/";
 
 const date = new Date().toISOString();
 // https://astro.build/config
