@@ -1,18 +1,49 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Hero from "@/components/landing/Hero.astro";
-import Work from "@/components/landing/Work.astro";
-import Intro from "@/components/landing/Intro.astro";
-import Services from "@/components/landing/Services.astro";
-import Cta from "@/components/landing/Cta.astro";
-
+import Hero from "@libs/ui/blocks/Hero/Hero";
+import Layout from "layouts/Layout.astro";
 ---
 
+<Layout
+    title="Vincent Horvath"
+    description="I'm a software engineer with a passion for understanding and solving complex problems. I'm currently working as an associate software engineer at T. Rowe Price."
+>
+    <main class="bg-background">
+        <Hero
+            name="Vincent Horvath"
+            biography="I'm a software engineer with a passion for understanding and solving complex problems. I'm currently working as an associate software engineer at T. Rowe Price."
+            skills={["React", "Node.js", "Typescript", "Next.js", "Tailwind CSS"]}
+            socialLinks={[
+                {
+                    href: "https://github.com/vhorvath2010",
+                    icon: "github",
+                    label: "GitHub",
+                },
+                {
+                    href: "https://www.linkedin.com/in/vincent-horvath/",
+                    icon: "linkedin",
+                    label: "LinkedIn",
+                },
+                { href: "mailto:vhorvath2010@gmail.com", icon: "mail", label: "Email" },
+            ]}
+            stats={[
+                { title: "Projects Done", value: 183 },
+                { title: "Years of Experience", value: 2, suffix: "+" },
+            ]}
+            image={{
+                src: "https://media.licdn.com/dms/image/v2/D4E03AQEf5kiJOVH2lQ/profile-displayphoto-shrink_800_800/B4EZUWuzAzGwAg-/0/1739843121547?e=1747872000&v=beta&t=6RtvZJkmJmXbeqMPtmtuzcMSwS5NlLRYf9x5bz8xkng",
+                alt: "Profile Photo",
+            }}
+            client:load
+        />
+    </main>
 
-<BaseLayout>
-  <Hero />
-  <Work />
-  <Intro />
-  <Services />
-  <Cta />
-</BaseLayout>
+    <style is:global>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</Layout>
