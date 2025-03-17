@@ -16,13 +16,18 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: 20
-          cache: "pnpm"
+          node-version: "20"
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Install dependencies using pnpm
         run: pnpm install
+
       - name: Build your site
         run: pnpm run build
 
