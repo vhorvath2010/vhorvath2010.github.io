@@ -38,6 +38,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.21(postcss@8.5.3)
+      fsevents:
+        specifier: ^2.3.3
+        version: 2.3.3
       gsap:
         specifier: ^3.12.7
         version: 3.12.7
@@ -5879,8 +5882,7 @@ snapshots:
       jsonfile: 6.1.0
       universalify: 2.0.1
 
-  fsevents@2.3.3:
-    optional: true
+  fsevents@2.3.3: {}
 
   function-bind@1.1.2: {}
 
