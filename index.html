@@ -1,29 +1,61 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Vincent Horvath</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        background-image: url("assets/background.jpg");
-        background-repeat: repeat;
-        background-size: 200px;
-        font-family: "Courier New", monospace;
-      }
-      h1 {
-        color: rgb(245, 240, 255);
-        background-color: rgba(79, 47, 211, 0.314);
-        padding: 0.2em 0.5em;
-        margin: 0 auto;
-        display: block;
-        width: fit-content;
-      }
-    </style>
-  </head>
 
-  <body>
-    <h1>Vincent Horvath</h1>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Vincent Horvath</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      background-image: url("assets/background.jpg");
+      background-repeat: repeat;
+      background-size: 200px;
+      font-family: "Courier New", monospace;
+    }
+
+    .content-panel {
+      background-color: rgba(80, 47, 211, 0.596);
+      padding: 1em;
+      margin: 2em auto;
+      width: fit-content;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    h1,
+    .description {
+      color: rgb(245, 240, 255);
+      margin: 0;
+      padding: 0;
+    }
+
+    .description {
+      margin-top: 1em;
+      line-height: 1.5;
+    }
+
+    a {
+      color: rgb(245, 240, 255);
+      text-decoration: underline;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-panel">
+    <h1><a href="https://www.linkedin.com/in/vincent-horvath/" target="_blank">Vincent Horvath</a></h1>
+    <p class="description">
+      AI/ML-focused Software Engineer at <a href="https://www.troweprice.com/en/us" target="_blank">T. Rowe Price's</a>
+      Technology Development Center
+      in NYC, building a chatbot
+      application to enhance productivity for 8,000+ associates and save $10M+/year.
+    </p>
+  </div>
+</body>
+
 </html>
