@@ -1,175 +1,452 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Vincent Horvath</title>
+    <title>Vincent Horvath - Software Engineer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Vincent Horvath - AI/ML-focused Software Engineer at T. Rowe Price, building innovative solutions and exploring cutting-edge technology."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      body {
-        background-image: url("assets/background.jpg");
-        background-repeat: repeat;
-        background-size: 200px;
-        font-family: "Courier New", monospace;
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #64748b;
+        --accent-color: #0ea5e9;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --background: #ffffff;
+        --surface: #f8fafc;
+        --border: #e2e8f0;
+        --shadow:
+          0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        --shadow-lg:
+          0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
       }
 
-      .content-panel {
-        background-color: rgba(80, 47, 211, 0.596);
-        color: rgb(245, 240, 255);
-        padding: 1em;
-        margin: 2em auto;
-        width: fit-content;
-        max-width: 600px;
-        text-align: center;
-      }
-
-      h1,
-      .description {
+      * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
 
-      .description {
-        margin-top: 1em;
-        line-height: 1.5;
+      body {
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background: var(--background);
+        color: var(--text-primary);
+        line-height: 1.6;
       }
 
-      .about-section {
-        margin-top: 2em;
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Toggle Switch */
+      .mode-toggle {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: var(--surface);
+        padding: 0.75rem 1rem;
+        border-radius: 50px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+      }
+
+      .toggle-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+
+      .toggle-switch {
+        position: relative;
+        width: 48px;
+        height: 24px;
+        background: var(--border);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .toggle-switch::before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+      }
+
+      .toggle-switch.active {
+        background: var(--primary-color);
+      }
+
+      .toggle-switch.active::before {
+        transform: translateX(24px);
+      }
+
+      /* Header Section */
+      .header {
+        padding: 6rem 0 4rem;
         text-align: center;
+        background: linear-gradient(135deg, var(--surface) 0%, white 100%);
       }
 
-      .about-section img {
-        max-width: 300px;
-        margin: 1em auto;
-        display: block;
-        border-radius: 8px;
+      .profile-section {
+        max-width: 800px;
+        margin: 0 auto;
       }
 
-      .contact-section {
-        margin-top: 2em;
-        text-align: center;
-        border-top: 1px solid rgba(245, 240, 255, 0.3);
-        padding-top: 1em;
+      .name {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+        letter-spacing: -0.02em;
       }
 
-      .projects-section {
-        margin-top: 2em;
-        text-align: left;
+      .name a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
       }
 
-      .projects-section h2 {
-        text-align: center;
-        margin-bottom: 1em;
+      .name a:hover {
+        color: var(--primary-color);
       }
 
-      .project {
-        margin-bottom: 1.2em;
-        padding: 0.5em 0;
-      }
-
-      .project-title {
-        font-weight: bold;
-        margin-bottom: 0.3em;
-      }
-
-      .project-description {
-        font-size: 0.9em;
+      .title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
         line-height: 1.4;
-        margin-left: 1em;
       }
 
-      a {
-        color: rgb(245, 240, 255);
+      .title a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .title a:hover {
         text-decoration: underline;
       }
 
-      a:hover {
-        opacity: 0.8;
+      /* Projects Section */
+      .section {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--text-primary);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .project-title a {
+        color: var(--text-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .project-title a:hover {
+        color: var(--primary-color);
+      }
+
+      .project-description {
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      .github-link {
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .github-link a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .github-link a:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      /* About Section */
+      .about-section {
+        background: var(--surface);
+        border-radius: 12px;
+        padding: 3rem;
+        text-align: center;
+        margin: 4rem 0;
+      }
+
+      .about-text {
+        font-size: 1.125rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        line-height: 1.7;
+      }
+
+      .about-text a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .about-text a:hover {
+        text-decoration: underline;
+      }
+
+      .baba-image {
+        max-width: 300px;
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+
+      /* Contact Section */
+      .contact-section {
+        text-align: center;
+        padding: 3rem 0;
+        border-top: 1px solid var(--border);
+      }
+
+      .contact-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+
+      .contact-email {
+        font-size: 1.125rem;
+      }
+
+      .contact-email a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .contact-email a:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 0 1rem;
+        }
+
+        .mode-toggle {
+          top: 1rem;
+          right: 1rem;
+          padding: 0.5rem 0.75rem;
+        }
+
+        .name {
+          font-size: 2.5rem;
+        }
+
+        .title {
+          font-size: 1.25rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about-section {
+          padding: 2rem;
+        }
       }
     </style>
   </head>
 
   <body>
-    <div class="content-panel">
-      <h1>
-        <a href="https://www.linkedin.com/in/vincent-horvath/" target="_blank"
-        >Vincent Horvath</a>
-      </h1>
-      <p class="description">
-        AI/ML-focused Software Engineer at <a
-          href="https://www.troweprice.com/en/us"
-          target="_blank"
-        >T. Rowe Price's</a>
-        Technology Development Center in NYC, building a chatbot application to
-        enhance productivity for 8,000+ associates and save $10M+/year.
-      </p>
+    <!-- Mode Toggle -->
+    <div class="mode-toggle">
+      <span class="toggle-label">Retro Mode</span>
+      <div class="toggle-switch" onclick="toggleMode()"></div>
+    </div>
 
-      <div class="projects-section">
-        <h2>Personal Projects</h2>
-
-        <div class="project">
-          <div class="project-title">
-            <a href="https://github.com/vhorvath2010/judah" target="_blank"
-            >J.U.D.A.H.</a> (just ur dependable ai helper)
-          </div>
-          <div class="project-description">
-            Voice assistant with LLM integration using MCP (Model Context
-            Protocol)
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-title">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <div class="profile-section">
+          <h1 class="name">
             <a
-              href="https://github.com/vhorvath2010/stellar-classifiers"
+              href="https://www.linkedin.com/in/vincent-horvath/"
               target="_blank"
-            >Stellar Classifier</a>
-          </div>
-          <div class="project-description">
-            Random forest classification of stars using machine learning
-            techniques
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-title">
-            <a
-              href="https://github.com/vhorvath2010/music-discoverability-app-poc"
-              target="_blank"
-            >Music Directory App</a>
-          </div>
-          <div class="project-description">
-            Learning HTMX and server-side rendering with templating for music
-            discovery
-          </div>
+            >Vincent Horvath</a>
+          </h1>
+          <p class="title">
+            AI/ML-focused Software Engineer at
+            <a href="https://www.troweprice.com/en/us" target="_blank"
+            >T. Rowe Price's</a>
+            Technology Development Center in NYC, building a chatbot application
+            to enhance productivity for 8,000+ associates and save $10M+/year.
+          </p>
         </div>
       </div>
+    </header>
 
-      <p>
-        Check out my <a href="https://github.com/vhorvath2010/" target="_blank"
-        >GitHub</a> for more projects:
-      </p>
+    <!-- Projects Section -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Personal Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3 class="project-title">
+              <a href="https://github.com/vhorvath2010/judah" target="_blank"
+              >J.U.D.A.H.</a> (just ur dependable ai helper)
+            </h3>
+            <p class="project-description">
+              Voice assistant with LLM integration using MCP (Model Context
+              Protocol)
+            </p>
+          </div>
 
+          <div class="project-card">
+            <h3 class="project-title">
+              <a
+                href="https://github.com/vhorvath2010/stellar-classifiers"
+                target="_blank"
+              >Stellar Classifier</a>
+            </h3>
+            <p class="project-description">
+              Random forest classification of stars using machine learning
+              techniques
+            </p>
+          </div>
+
+          <div class="project-card">
+            <h3 class="project-title">
+              <a
+                href="https://github.com/vhorvath2010/music-discoverability-app-poc"
+                target="_blank"
+              >Music Directory App</a>
+            </h3>
+            <p class="project-description">
+              Learning HTMX and server-side rendering with templating for music
+              discovery
+            </p>
+          </div>
+        </div>
+
+        <div class="github-link">
+          <a href="https://github.com/vhorvath2010/" target="_blank">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+            </svg>
+            View More Projects on GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="container">
       <div class="about-section">
-        <p>
-          When I'm not coding, you can find me playing <a
-            href="https://www.hempuli.com/baba/"
-            target="_blank"
+        <p class="about-text">
+          When I'm not coding, you can find me playing
+          <a href="https://www.hempuli.com/baba/" target="_blank"
           >Baba is You</a>, a puzzle game that challenges your understanding of
           game rules and logic.
         </p>
-        <img src="assets/baba.gif" alt="Baba is You gameplay animation" />
-      </div>
-
-      <div class="contact-section">
-        <p>
-          Want to connect? I'm always open to discussion!
-        </p>
-        <p>
-          <a href="mailto:vhorvath2010@gmail.com">vhorvath2010@gmail.com</a>
-        </p>
+        <img
+          src="assets/baba.gif"
+          alt="Baba is You gameplay animation"
+          class="baba-image"
+        />
       </div>
     </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="container">
+        <h2 class="contact-title">
+          Want to connect? I'm always open to discussion!
+        </h2>
+        <div class="contact-email">
+          <a href="mailto:vhorvath2010@gmail.com">vhorvath2010@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function toggleMode() {
+        const toggle = document.querySelector(".toggle-switch");
+
+        // Always redirect to retro mode when clicked (toggle will be activated)
+        window.location.href = "/retro/";
+      }
+    </script>
   </body>
 </html>
